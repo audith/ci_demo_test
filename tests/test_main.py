@@ -8,3 +8,9 @@ def test_root():
     
     assert response.status_code == 200
     assert response.json() == {"message": "Hello CI/CD"}
+
+def test_sum():
+    response = client.get("/sum?a=5&b=3")
+
+    assert response.status_code == 200
+    assert response.json() == {"result": 8}
